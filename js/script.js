@@ -52,3 +52,25 @@ const cats = [
         age: 21
     }
 ];
+
+function question7(list){
+  for(let i = 0; i < list.length; i++) {
+    console.log(list[i].name);
+  }
+}
+
+question7(cats)
+
+// Question 8
+
+const catContainer = document.querySelector(".cat-container");
+
+function createCats(cats){
+  for(let i = 0; i < cats.length; i++) {
+    console.log(cats[i].name);
+  }
+  catContainer.innerHTML = `<div></div>`;
+}
+
+
+createCats(cats)
