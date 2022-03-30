@@ -69,12 +69,12 @@ let html = "";
 
 function createCats(cats){
   for(let i = 0; i < cats.length; i++) {
-        let catAge = "";
-        if (cats[i].age !== undefined) {
-        catAge = cats[i].age;
-      }
-    html += `<h5>${cats[i].name}</h5>`
-    html += `<p>${catAge}</p>`
+        let catAge = cats[i].age;
+        if (cats[i].age === undefined) {
+        catAge = "Age unknown";
+        }
+    html += `<div><h5>${cats[i].name}</h5></div>`
+    html += `<div><p>${catAge}</p></div>`
   }
   catContainer.innerHTML = html;
 }
