@@ -1,3 +1,17 @@
+const cats = [
+  {
+      name: "Blob",
+      age: 10
+  },
+  {
+      name: "Harold",
+  },
+  {
+      name: "Blurt",
+      age: 21
+  }
+];
+
 // Question 1
 
 const cat = {
@@ -39,20 +53,6 @@ resultsContainer.style.backgroundColor = "yellow";
 
 // Question 7
 
-const cats = [
-    {
-        name: "Blob",
-        age: 10
-    },
-    {
-        name: "Harold",
-    },
-    {
-        name: "Blurt",
-        age: 21
-    }
-];
-
 function question7(list){
   for(let i = 0; i < list.length; i++) {
     console.log(list[i].name);
@@ -65,12 +65,18 @@ question7(cats)
 
 const catContainer = document.querySelector(".cat-container");
 
+let html = "";
+
 function createCats(cats){
   for(let i = 0; i < cats.length; i++) {
-    console.log(cats[i].name);
+        let catAge = "";
+        if (cats[i].age !== undefined) {
+        catAge = cats[i].age;
+      }
+    html += `<h5>${cats[i].name}</h5>`
+    html += `<p>${catAge}</p>`
   }
-  catContainer.innerHTML = `<div></div>`;
+  catContainer.innerHTML = html;
 }
-
 
 createCats(cats)
